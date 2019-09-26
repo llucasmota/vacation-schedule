@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(routes);
 
-mongoose.createConnection(databaseConfig.url, {
+mongoose.connect(databaseConfig.url, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
