@@ -35,11 +35,16 @@ User.pre("save", async function(next) {
   }
   this.password = await bcrypt.hash(this.password, 8);
 });
+User.methods = {
+  compareHash(password) {
+    return bcrypt.compare(password, this.password);
+  }
+};
 
 User.statics = {
-  generateToken({ id }) {
+  generateToken({ cpf }) {
     // gera token de acordo como id
-    return jwt.sign({ id }, authConfig.secret, {
+    return jwt.sign({ cpf }, authConfig.secret, {
       // informa o que terá no jwt: o id do user, nome da aplicação
       expiresIn: authConfig.ttl // em quanto tempo expira
     });
