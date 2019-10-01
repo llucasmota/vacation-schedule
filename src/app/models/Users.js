@@ -48,7 +48,7 @@ User.methods = {
 }
 
 User.statics = {
-  generateToken ({ user_id }) {
+  generateToken ( user_id ) {
     // gera token de acordo como id
     return jwt.sign({ user_id }, authConfig.secret, {
       // informa o que terá no jwt: o id do user, nome da aplicação
