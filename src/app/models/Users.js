@@ -5,7 +5,10 @@ import bcrypt from 'bcrypt'
 import authConfig from '../config/auth'
 
 const User = new mongoose.Schema({
- user_id: {
+ /**
+  * O Controller gera um uuid para este campo
+  */
+  user_id: {
    type: String, 
    unique: true,
    required: true
