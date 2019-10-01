@@ -13,7 +13,8 @@ export default async (req, res, next) => {
 
   try {
     const decoded = await promisify(jwt.verify)(token, authConfig.secret);
-    req.userId = decoded.id;
+    console.log(decoded)
+    req.userId = decoded.user_id;
     console.log(req.userId); // após decodificação recupero o id que vem codificado no token
     return next();
   } catch (err) {
