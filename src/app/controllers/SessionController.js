@@ -1,4 +1,4 @@
-import User from "../models/Users";
+import User from '../models/Users';
 
 class SessionController {
   async store(req, res) {
@@ -6,12 +6,12 @@ class SessionController {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ error: "user not found" });
+      return res.status(400).json({ error: 'user not found' });
     }
     if (!(await user.compareHash(password))) {
-      return res.status(400).json({ error: "invalid password" });
+      return res.status(400).json({ error: 'invalid password' });
     }
-    return res.json({ user,token: User.generateToken(user.user_id) });
+    return res.json({ user, token: User.generateToken(user.user_id) });
   }
 }
 
