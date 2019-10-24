@@ -1,5 +1,4 @@
 import Vacation from '../models/Vacation';
-import User from '../models/Users';
 import uuid from 'uuid/v4';
 
 class VacationController {

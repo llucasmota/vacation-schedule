@@ -38,6 +38,7 @@ const User = new mongoose.Schema({
   },
 });
 
+// eslint-disable-next-line func-names
 User.pre('save', async function(next) {
   if (!this.isModified('password')) {
     next();

@@ -3,6 +3,7 @@ import UserController from './app/controllers/UserController';
 import authMiddleware from './app/middlewares/auth';
 import SessionController from './app/controllers/SessionController';
 import VacationController from './app/controllers/VacationController';
+import GroupController from './app/controllers/GroupController';
 
 const routes = new Router();
 
@@ -17,4 +18,7 @@ routes.get('/', (req, res) => {
 });
 
 routes.post('/vacations', VacationController.store);
+
+routes.post('/groups', GroupController.store);
+
 export default routes;
