@@ -2,6 +2,7 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import uuid from 'uuid/v4';
 import authConfig from '../config/auth';
 
 const User = new mongoose.Schema({
@@ -10,6 +11,7 @@ const User = new mongoose.Schema({
    */
   user_id: {
     type: String,
+    default: uuid(),
     unique: true,
     required: true,
   },
@@ -28,6 +30,7 @@ const User = new mongoose.Schema({
     unique: true,
     lowercase: true,
   },
+
   password: {
     type: String,
     required: true,

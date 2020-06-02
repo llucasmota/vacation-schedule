@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
+import uuid from 'uuid/v4';
 
 const Vacation = new mongoose.Schema({
   user_id: {
     type: String,
+    default: uuid(),
     required: true,
   },
   vacation_id: {
