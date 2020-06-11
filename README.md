@@ -1,6 +1,6 @@
 ## Sobre o projeto
 
-- Quando ocorre o período de marcação de férias no local onde trabalho precisamos seguir certas regras, as quais se chocam certas vezes devido ao fato de usarmos uma planilha que tem a marcação prévia e é utilizadas por N pessoas. As regras seriam:  
+- Quando ocorre o período de marcação de férias no local onde trabalho precisamos seguir certas regras, as quais se chocam certas vezes devido ao fato de usarmos uma planilha que tem a marcação prévia e é utilizadas por N pessoas. As regras seriam:
 
 - Pessoas da mesma equipe não podem tirar férias num mesmo período;
 - Férias não podem ser marcadas para um período já vencido;
@@ -36,3 +36,9 @@
 ### Executar o seguinte comando no terminal:
 
 `docker run --name mongo-serve -p 27017:27017 -d -t mongo`
+
+## Iniciando o servidor:
+
+### Na raiz do projeto executar:
+
+- `npm start`
