@@ -1,6 +1,6 @@
 ## Sobre o projeto
 
-- Quando ocorre o período de marcação de férias no Sicoob precisamos seguir certas regras que sempre entravam em choque, pois pessoas diferentes mexiam na planilha causando dados meio incertos, arquivos corrompidos e férias que não atendiam as regras, que basicament são:
+- Quando ocorre o período de marcação de férias no local onde trabalho precisamos seguir certas regras, as quais se chocam certas vezes devido ao fato de usarmos uma planilha que tem a marcação prévia e é utilizadas por N pessoas. As regras seriam:  
 
 - Pessoas da mesma equipe não podem tirar férias num mesmo período;
 - Férias não podem ser marcadas para um período já vencido;
