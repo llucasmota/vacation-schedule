@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import express from 'express';
-import routes from './routes';
+import routes from './app/routes';
 import databaseConfig from './app/database/index';
 
 dotenv.config();
