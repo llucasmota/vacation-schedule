@@ -1,12 +1,16 @@
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util'); // importado para que pudesse utilizar
-const authConfig = require('../config/auth');
+import jwt from 'jsonwebtoken';
+// importado para que pudesse utilizar promise
+import { promisify } from 'util';
+
+import authConfig from '../config/auth';
+
+import AppError from '../Errors/AppError';
 
 export default async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({ error: 'Token not provided' });
+    throw new AppError('Token not provided', 401);
   }
 
   const [, token] = authHeader.split(' ');
@@ -18,6 +22,6 @@ export default async (req, res, next) => {
     // após decodificação recupero o id que vem codificado no token
     return next();
   } catch (err) {
-    return res.status(401).json({ error: 'Token Invalid' });
+    throw new AppError('Token not provided', 401);
   }
 };

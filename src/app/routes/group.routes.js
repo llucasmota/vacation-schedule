@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Group from '../models/Group';
+import CreateGroupServices from '../services/createGroup.services';
 import authMiddleware from '../middlewares/auth';
 
 const groups = Router();
@@ -7,7 +7,8 @@ const groups = Router();
 groups.post('/', authMiddleware, async (req, res) => {
   const { management, description, activated } = req.body;
 
-  const group = await Group.create({
+  const createGroupServices = new CreateGroupServices();
+  const group = await createGroupServices.execute({
     management,
     description,
     activated,
