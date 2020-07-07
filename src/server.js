@@ -1,17 +1,14 @@
+import express from 'express';
+import 'express-async-errors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import express from 'express';
 import routes from './app/routes';
+
 import AppError from './app/Errors/AppError';
 import databaseConfig from './app/database/index';
-import 'express-async-errors';
 
 dotenv.config();
-mongoose.connect(databaseConfig.url, {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+
 const app = express();
 
 app.use(express.json());
@@ -26,15 +23,10 @@ app.use((err, req, res, next) => {
     .status(500)
     .json({ status: 'error', message: 'Internal Server Error' });
 });
-
-const mongoConnect = async () => {
-  await mongoose.connect(databaseConfig.url, {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-};
-mongoConnect().catch(error => console.error(error));
-
+mongoose.connect(databaseConfig.url, {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 // subindo o server
 app.listen(3333);
