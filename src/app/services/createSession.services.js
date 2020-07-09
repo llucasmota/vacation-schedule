@@ -4,7 +4,6 @@ import AppError from '../Errors/AppError';
 export default class CreateSessionService {
   async execute({ email, password }) {
     const user = await User.findOne({ email });
-    console.log(user);
 
     if (!user) {
       throw new AppError('user not found', 401);
