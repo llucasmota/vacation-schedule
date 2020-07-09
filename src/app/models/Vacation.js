@@ -9,8 +9,9 @@ const Vacation = new mongoose.Schema({
   },
   vacation_id: {
     type: String,
-    unique: true,
+    default: uuid(),
     required: true,
+    unique: true,
   },
   start: {
     type: Date,
