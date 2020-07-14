@@ -12,6 +12,15 @@ export default class CreateUsersServices {
       throw new AppError('Email ou CPF já cadastrados', 400);
     }
     const user = await User.create({ name, cpf, email, password });
-    return user;
+
+    delete user.user_id;
+    delete user.id;
+    delete user.createdAt;
+    return {
+      name: user.name,
+      cpf: user.cpf,
+      email: user.email,
+      passowrd: user.passowrd,
+    };
   }
 }
