@@ -16,6 +16,20 @@ const Group = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  subGroup: [
+    {
+      subGroup_id: {
+        type: String,
+        default: uuid(),
+        required: true,
+        unique: true,
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
   description: {
     type: String,
     required: true,

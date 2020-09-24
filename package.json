@@ -5,12 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon src/server.js --unhandled-rejections=strict",
-    "test": "mocha src/test/spec-test/vacation-suite.js"
+    "test": "mocha src/test/spec/test.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^3.0.8",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
@@ -19,9 +22,12 @@
     "mongoose": "^5.7.1",
     "sucrase": "^3.10.1",
     "supertest": "^4.0.2",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "jest": "^26.2.1",
+    "mongodb-memory-server": "^6.6.3"
   },
   "devDependencies": {
+    "@types/supertest": "^2.0.10",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.3.0",
