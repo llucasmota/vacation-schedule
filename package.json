@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.js --unhandled-rejections=strict",
-    "test": "mocha src/test/spec/test.js"
+    "start": "nodemon src/server.js ",
+    "test": "jest src/test/spec/*spec.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -21,13 +21,14 @@
     "mocha": "^7.0.1",
     "mongoose": "^5.7.1",
     "sucrase": "^3.10.1",
-    "supertest": "^4.0.2",
     "uuid": "^3.3.3",
-    "jest": "^26.2.1",
     "mongodb-memory-server": "^6.6.3"
   },
   "devDependencies": {
+    "@jest/globals": "^26.5.2",
     "@types/supertest": "^2.0.10",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.3.0",
@@ -37,7 +38,10 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.5.2",
     "nodemon": "^1.19.2",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "superagent": "^6.1.0",
+    "supertest": "^4.0.2"
   }
 }
